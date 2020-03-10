@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>CRIMINAL-SPR</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	
+    <!-- Bootstrap CSS -->
+<link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+    
+</head>
+<body>
+	<h1>CADASTRO DE AUTORIDADES</h1>
+
+<body>
+
+<form th:action="@{/autoridade}" method="post" th:object="${autoridade}">
+    <input th:field="*{nome}" placeholder="Nome"/>
+
+    <select name="cargo" th:field="*{cargo}">
+        <option th:each="cargo : ${T(com.criminal.model.Cargo).values()}"
+                th:value="${cargo}" th:text="${cargo}"></option>
+    </select>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+
+</body>
+
+<!-- JS e Jquery -->
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/jquery/jquery-3.4.1.slim.js"></script>
+</html>
+
+
+	
+	
+	
+
+	
